@@ -19,7 +19,7 @@ if not api_key:
 # Initialize Gemini API
 try:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-2.0-flash-exp")
 except Exception as e:
     st.warning(f"⚠️ API Error: {str(e)}")
 
