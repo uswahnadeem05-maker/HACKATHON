@@ -345,3 +345,5 @@ If something breaks:
 ---
 
 **Let's empower students through technology! 🚀**
+#   H A C K A T H O N  
+ 
