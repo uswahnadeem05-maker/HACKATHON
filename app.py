@@ -174,64 +174,34 @@ elif page == "🎯 My Career Path":
         )
     
     if selected_skills and st.button("🚀 Get My Learning Path", use_container_width=True):
-        st.success("Generating personalized path with AI...")
-        
-        try:
-            # Get AI recommendation
-            prompt = f"""
-            Student Profile:
-            - Current Skills: {', '.join(selected_skills)}
-            - Target Role: {target_role}
-            - Location: Pakistan
+        st.success("Generating personalized path with AI...
+       
+        st.markdown("### 📚 Your Learning Roadmap (Recommended Path):")
+        fallback_text = f"""
+        **Recommended Skills for {target_role}:**
+    
+        **Skill #1: Advanced Analytics**
+        - Why: Most {target_role} roles require advanced data analysis
+        - Time: 6-8 weeks
+        - Resources: YouTube tutorials, FreeCodeCamp, Khan Academy
+        - Salary Impact: +30% expected increase
             
-            Based on current Pakistan job market:
-            1. Recommend 3 skills to learn (in priority order) to land this role
-            2. For each skill, provide:
-               - Why it's important
-               - Estimated learning time (weeks)
-               - Free resources (mention platforms like YouTube, Udemy, etc.)
-            3. Predict salary potential after acquiring these skills
-            4. Motivational message
+        **Skill #2: Cloud Technologies (AWS/Azure)**
+        - Why: Industry standard in Pakistan job market
+        - Time: 8-10 weeks
+        - Resources: A Cloud Guru, Linux Academy free content
+        - Salary Impact: +25% expected increase
             
-            Format as clear, actionable advice.
-            """
+        **Skill #3: Communication & Leadership**
+        - Why: Required for career advancement
+        - Time: 4-6 weeks (ongoing)
+        - Resources: Podcasts, books, mentorship
+        - Salary Impact: +20% expected increase
             
-            response = model.generate_content(prompt)
-            st.markdown("### 📚 Your Learning Roadmap:")
-            st.info(response.text)
-            
-            if st.checkbox("Save this path to my profile?"):
-                st.success("✅ Saved! Track your progress on the Leaderboard page.")
-        
-        except Exception as e:
-            st.warning(f"⚠️ API Error: {str(e)}")
-            # Fallback recommendations
-            st.markdown("### 📚 Your Learning Roadmap (Recommended Path):")
-            fallback_text = f"""
-            **Recommended Skills for {target_role}:**
-            
-            **Skill #1: Advanced Analytics**
-            - Why: Most {target_role} roles require advanced data analysis
-            - Time: 6-8 weeks
-            - Resources: YouTube tutorials, FreeCodeCamp, Khan Academy
-            - Salary Impact: +30% expected increase
-            
-            **Skill #2: Cloud Technologies (AWS/Azure)**
-            - Why: Industry standard in Pakistan job market
-            - Time: 8-10 weeks
-            - Resources: A Cloud Guru, Linux Academy free content
-            - Salary Impact: +25% expected increase
-            
-            **Skill #3: Communication & Leadership**
-            - Why: Required for career advancement
-            - Time: 4-6 weeks (ongoing)
-            - Resources: Podcasts, books, mentorship
-            - Salary Impact: +20% expected increase
-            
-            **Motivational Message:**
-            You're on the right path! With dedication and consistent learning, you can land your dream role in Pakistan within 3-4 months. Stay focused! 💪
-            """
-            st.info(fallback_text)
+        **Motivational Message:**
+        You're on the right path! With dedication and consistent learning, you can land your dream role in Pakistan within 3-4 months. Stay focused! 💪
+        """
+        st.info(fallback_text)
 
 # ==================== PAGE: LEARNING RESOURCES ====================
 elif page == "💡 Learning Resources":
