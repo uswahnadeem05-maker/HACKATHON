@@ -174,7 +174,7 @@ elif page == "🎯 My Career Path":
         )
     
     if selected_skills and st.button("🚀 Get My Learning Path", use_container_width=True):
-        st.success("Generating personalized path with AI...
+        st.success("Generating personalized path with AI...")
        
         st.markdown("### 📚 Your Learning Roadmap (Recommended Path):")
         fallback_text = f"""
